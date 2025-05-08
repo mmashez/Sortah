@@ -1,5 +1,5 @@
 requirements: Windows XP SP2+ (powershell requirements)
-After Effects CS4 9.0/2008+
+After Effects CS4 9.0/2008+ (if you want your project started up with auto-importing, if not, disable isAfterFX in config.json)
 
 most minimum requirements!..
 
