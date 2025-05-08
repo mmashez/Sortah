@@ -1,9 +1,19 @@
-# organizer made for content creators!
+# sortah.
 
-this project is meant to help content creators with organizing their files, via different, fully customizable values in ``config.json``
-mostly targeted for Adobe After Effects® CS4 (v9.0/2008 or higher versions) users.
+sortah is a minimalist file organizer built to help content creators manage their project files through fully customizable settings defined in `config.json`.  
+it is primarily targeted at adobe after effects® cs4 (v9.0, 2008 or higher) users.
 
-currently supports **Windows** platforms only. as said in ``NOTE.txt``, minimum requirements are Windows XP SP2+, as this code utilizes powershell.
+> ⚠️ **platform support:**  
+> currently supports **windows only**.  
+> as noted in `note.txt`, the minimum requirement is **Windows XP SP2+**, as this tool relies on powershell to start your editing software, referred to from `config.json`
 
-**DISCLAIMER**: Adobe After Effects® is a registered trademark of Adobe Inc. this project is not affiliated with, endorsed by, or in any way officially connected to Adobe Inc.
-this project is under the MIT license. to know what that means, click [here](https://choosealicense.com/)
+---
+
+### 📄 disclaimer
+
+**Adobe After Effects®** is a registered trademark of **Adobe Inc.**  
+this project is not affiliated with, endorsed by, or in any way officially connected to adobe inc.
+
+this project is licensed under the **MIT License**. to learn more, click [here](https://choosealicense.com/).
+
+throughout this project, the terms **“we,” “us,”** or **“this project”** refer to either the **sortah** project itself or its developers.
