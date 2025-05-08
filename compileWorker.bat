@@ -20,7 +20,7 @@ if %errorlevel% neq 0 (
 
 echo compiled successfully!
 
-if exist output rmdir /S /Q output > nul
+if exist outputWorker rmdir /S /Q outputWorker > nul
 
 mkdir outputWorker\
 
