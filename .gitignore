@@ -1,3 +1,6 @@
 .vscode/
 error.txt
 output/
+outputWorker/
+binTemp/
+binTempWorker/

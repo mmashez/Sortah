@@ -24,10 +24,10 @@ const vector<string> prompts = {
     "audio name: "
 };
 
-void init() {
+void init(int argc, char* argv[]) {
     // if app didnt start as admin, run it as admin, then end current proccess
     if (!isRunningAsAdmin()) {
-        runAsAdmin();
+        runAsAdmin(argc, argv);
 
         exit(0);
     }
@@ -135,20 +135,21 @@ void generate_jsx(const string& editName, const vector<string>& selectedVideos, 
     }
 }
 
-int start_software(const string& jsxPath) {
+int start_software() {
     return start(string(software_path), verbose);
 }
 
 
+
 int main(int argc, char* argv[]) {
+    init(argc, argv);
+    
     for (int i = 1; i < argc; ++i) {
         if (string(argv[i]) == "-verbose") {
             verbose = true;
             cout << "verbose mode enabled!" << endl;
         }
     }
-
-    init();
 
     cout << prompts[0];
     string editName;
@@ -186,7 +187,7 @@ int main(int argc, char* argv[]) {
         }
     }
     generate_jsx(editName, selectedVideos, string(audios_path) + "\\" + audioName);
-    start_software(editPath.string());
+    start_software();
 
     // wait for ANY user input to exit
     cin.ignore();

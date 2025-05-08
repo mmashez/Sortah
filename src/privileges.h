@@ -17,17 +17,22 @@ bool isRunningAsAdmin() {
     return isElevated;
 }
 
-void runAsAdmin() {
+void runAsAdmin(int argc, char* argv[]) {
     char fileName[MAX_PATH];
     if (GetModuleFileNameA(NULL, fileName, MAX_PATH) == 0) return;
-    
+
+    std::ostringstream oss;
+    for (int i = 1; i < argc; ++i) {
+        if (i > 1) oss << " ";
+        oss << '\"' << argv[i] << '\"';
+    }
+
     ShellExecuteA(
         NULL,
-        "runas",          
+        "runas",
         fileName,
-        NULL,
+        oss.str().c_str(),
         NULL,
         SW_SHOWNORMAL
     );
 }
-
