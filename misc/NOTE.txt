@@ -1,0 +1,6 @@
+requirements: Windows XP SP2+ (powershell requirements)
+After Effects CS4 9.0/2008+
+
+most minimum requirements!..
+
+the app will ask to run as administrator, or else it wont be able to execute the scripts! (used for auto-importing footage)
