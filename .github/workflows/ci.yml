@@ -16,11 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 1: Install MinGW
+      # Step 1: Install MinGW using Chocolatey
       - name: Install MinGW
         run: |
-          choco install mingw --version=8.1.0
-          refreshenv
+          choco install mingw --version=8.1.0 -y
+          # Import Chocolatey environment variables manually
+          Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
       # Step 2: Set up and compile the project
       - name: Compile C++ Project

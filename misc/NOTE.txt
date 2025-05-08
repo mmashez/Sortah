@@ -3,4 +3,6 @@ After Effects CS4 9.0/2008+ (if you want your project started up with auto-impor
 
 most minimum requirements!..
 
-the app will ask to run as administrator, or else it wont be able to execute the scripts! (used for auto-importing footage)
+the app will ask to run as administrator, or else it wont be able to auto-execute the scripts on after effects launch.. (used for auto-importing footage, as After Effects is commonly installed in the Program Files folder.)
+if you would NOT like that, then, source code is yours !
+https://github.com/mmashez/Sortah
