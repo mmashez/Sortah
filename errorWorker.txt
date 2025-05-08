@@ -1,7 +1,0 @@
-src\worker.cpp: In function 'int main(int, char**)':
-src\worker.cpp:85:46: error: 'videos_path' was not declared in this scope
-   85 |         if (!fs::exists(src)) src = fs::path(videos_path) / src;
-      |                                              ^~~~~~~~~~~
-src\worker.cpp:117:12: error: 'start_software' was not declared in this scope
-  117 |     return start_software(software_path);
-      |            ^~~~~~~~~~~~~~
