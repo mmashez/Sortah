@@ -4,16 +4,16 @@ sortah is a minimalist file organizer built to help content creators manage thei
 it is primarily targeted at Adobe After Effects® CS4 (v9.0, 2008 or higher) users.
 
 > ⚠️ **platform support:**  
-> currently supports **windows only**.  
-> as noted in `note.txt`, the minimum requirement is **Windows XP SP2+**, as this tool relies on powershell to start your editing software, referred to from `config.json`
+> currently supports **Windows only**.  
+> as noted in `note.txt`, the minimum requirement is **Windows XP SP2+**, as this tool relies on PowerShell to launch your editing software, specified in `config.json`.
 
 ---
 
 ### 📄 disclaimer
 
 **Adobe After Effects®** is a registered trademark of **Adobe Inc.**  
-this project is not affiliated with, endorsed by, or in any way officially connected to Adobe Inc.
-this project utilizes After Effect's startup scripts for the auto-import feature, which then self-deletes the script, referring to `generator.h`.
+this project is not affiliated with, endorsed by, or in any way officially connected to Adobe Inc.  
+this project utilizes Adobe After Effects' startup scripting system for its auto-import feature, which then self-deletes the script (see `generator.h`).
 
 this project is licensed under the **MIT License**. to learn more, click [here](https://choosealicense.com/).
 
