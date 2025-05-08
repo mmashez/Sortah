@@ -1,4 +1,4 @@
-name: Build and Compile C++ Project
+name: Build C++ Project
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # This will run on a Windows-based GitHub runner
+    runs-on: windows-latest  # This runs on a Windows-based GitHub runner (PowerShell)
 
     steps:
       - name: Checkout code
@@ -23,33 +23,20 @@ jobs:
           # Import Chocolatey environment variables manually
           Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
-      # Step 2: Set up and compile the project
+      # Step 2: Compile C++ Project
       - name: Compile C++ Project
         run: |
-          if not exist binTemp mkdir binTemp
-          if not exist output mkdir output
-          set output=binTemp\main.exe
-          set input=src\main.cpp
-          set arguments=-std=c++17
+          $input = "src\main.cpp"
+          $output = "binTemp\main.exe"
+          $arguments = "-std=c++17"
           
-          g++ %input% -o %output% %arguments% 2> error.txt > nul
-          if %errorlevel% neq 0 (
-            echo caught error:
-            type error.txt
-            echo saved to error.txt.
-            exit
-          )
+          # Compile the code
+          g++ $input -o $output $arguments
           
-          echo compiled successfully!
+          # Check for errors and exit if any
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "Error during compilation"
+            exit $LASTEXITCODE
+          }
 
-      # Step 3: Copy files
-      - name: Copy files to output directory
-        run: |
-          if exist output rmdir /S /Q output
-          mkdir output\
-          xcopy /E /Y misc output\
-          copy binTemp\main.exe output\
-
-      # Step 4: Clean up temporary files
-      - name: Clean up temp directories
-        run: rmdir /S /Q binTemp
+          Write-Host "Compilation successful"
