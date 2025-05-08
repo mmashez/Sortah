@@ -30,3 +30,4 @@ void runAsAdmin() {
         SW_SHOWNORMAL
     );
 }
+
