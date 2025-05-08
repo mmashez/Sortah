@@ -1,7 +1,6 @@
 @echo off
 cls
 
-rem Create necessary directories
 if not exist misc mkdir misc
 if not exist binTemp mkdir binTemp
 if not exist output mkdir output
@@ -10,7 +9,6 @@ set output=binTemp\main.exe
 set input=src\main.cpp
 set arguments=-std=c++17
 
-rem Compile the C++ program using g++
 g++ %input% -o %output% %arguments% 2> error.txt > nul
 if %errorlevel% neq 0 (
     echo caught error:
