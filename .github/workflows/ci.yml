@@ -27,7 +27,7 @@ jobs:
       - name: Compile C++ Project
         run: |
           $input = "src\main.cpp"
-          $output = "binTemp\main.exe"
+          $output = "main.exe"
           $arguments = "-std=c++17"
           
           # Compile the code
