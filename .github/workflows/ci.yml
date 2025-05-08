@@ -1,0 +1,54 @@
+name: Build and Compile C++ Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest  # This will run on a Windows-based GitHub runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 1: Install MinGW
+      - name: Install MinGW
+        run: |
+          choco install mingw --version=8.1.0
+          refreshenv
+
+      # Step 2: Set up and compile the project
+      - name: Compile C++ Project
+        run: |
+          if not exist binTemp mkdir binTemp
+          if not exist output mkdir output
+          set output=binTemp\main.exe
+          set input=src\main.cpp
+          set arguments=-std=c++17
+          
+          g++ %input% -o %output% %arguments% 2> error.txt > nul
+          if %errorlevel% neq 0 (
+            echo caught error:
+            type error.txt
+            echo saved to error.txt.
+            exit
+          )
+          
+          echo compiled successfully!
+
+      # Step 3: Copy files
+      - name: Copy files to output directory
+        run: |
+          if exist output rmdir /S /Q output
+          mkdir output\
+          xcopy /E /Y misc output\
+          copy binTemp\main.exe output\
+
+      # Step 4: Clean up temporary files
+      - name: Clean up temp directories
+        run: rmdir /S /Q binTemp
