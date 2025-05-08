@@ -9,7 +9,7 @@ it is primarily targeted at Adobe After Effects® CS4 (v9.0, 2008 or higher) use
 
 ---
 
-> there is also a **worker** application for the **sortah organizer!**
+there is also a **worker** application for the **sortah organizer!**
 use **worker.exe** (e.g. worker.exe "editname" "clip1.mkv,clip2.mkv" "audio.mp3")
 
 ### 📄 disclaimer
