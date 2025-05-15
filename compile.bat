@@ -79,7 +79,7 @@ exit /b
 :prepare_icon
 echo generating icon resource from "%icon_file%"...
 echo IDI_APP_ICON ICON "%icon_file%" > resource.rc
-windres resource.rc -O coff -o resource.o
+windres resource.rc -O coff -o resource.o > nul
 if errorlevel 1 (
     echo failed to compile resource.rc with icon!
     del resource.rc >nul 2>&1
