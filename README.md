@@ -20,6 +20,6 @@ this project utilizes Adobe After Effects' startup scripting system for its auto
 
 this project is licensed under the **MIT License**. to learn more, click [here](https://choosealicense.com/).
 
-throughout this project, the terms **“we,” “us,”** or **“this project”** refer to either the **sortah** project itself or its developers.
+throughout this project, the terms **“we,” “us,”** or **“this project”** refer to either the **sortah** project itself or its **developers**.
 
 credits to nlohmann for the [json library](https://github.com/nlohmann/json), which is under the MIT license.

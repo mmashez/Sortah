@@ -7,6 +7,8 @@ on:
     paths-ignore:
       - "*.txt"
       - "*.json"
+      - "*.md"
+      - "*.log"
   pull_request:
     branches:
       - main
