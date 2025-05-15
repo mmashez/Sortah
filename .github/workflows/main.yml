@@ -16,33 +16,17 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # This runs on a Windows-based GitHub runner (PowerShell)
+    runs-on: windows-latest
 
     steps:
-      - name: Checkout code
+      - name: checkout code
         uses: actions/checkout@v2
 
-      # Step 1: Install MinGW using Chocolatey
-      - name: Install MinGW
+      - name: install MinGW
         run: |
           choco install mingw --version=8.1.0 -y
           # Import Chocolatey environment variables manually
           Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
-      # Step 2: Compile C++ Project
-      - name: Compile C++ Project
-        run: |
-          $input = "src\main.cpp"
-          $output = "main.exe"
-          $arguments = "-std=c++17"
-          
-          # Compile the code
-          g++ $input -o $output $arguments
-          
-          # Check for errors and exit if any
-          if ($LASTEXITCODE -ne 0) {
-            Write-Host "Error during compilation"
-            exit $LASTEXITCODE
-          }
-
-          Write-Host "Compilation successful"
+      - name: compile
+        run: .\compile.bat

@@ -1,10 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <sstream>
-#include <stdexcept>
 #include <windows.h>
 #include <shellapi.h>
-#include "general.h"
+#include <general.h>
 
 namespace fs = std::filesystem;
 

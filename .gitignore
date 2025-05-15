@@ -1,7 +1,5 @@
 .vscode/
 error.txt
 output/
-outputWorker/
-binTemp/
-binTempWorker/
 merge/
+*.log
