@@ -1,16 +1,25 @@
-#include <filesystem>
 #include <iostream>
-#include <shellapi.h>
+#include <vector>
 #include <windows.h>
+#include <shellapi.h>
 #include <general.h>
+
+namespace fs = std::filesystem;
+
+using namespace std;
+using namespace fs;
+using namespace paths;
 
 int main(int argc, char* argv[]) {
     init(argc, argv, false);
-
-    if (argc > 1 && std::string(argv[1]) == "-verbose") {
-        setVerbose(true);
-        std::cout << "verbose mode enabled!" << std::endl;
+    
+    for (int i = 1; i < argc; ++i) {
+        if (string(argv[i]) == "-verbose") {
+            setVerbose(true);
+            cout << "verbose mode enabled!" << endl;
+        }
     }
-
     return handle_logic();
+
 }
+

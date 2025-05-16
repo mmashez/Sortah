@@ -26,7 +26,6 @@ set worker_log=%output_folder%\%build%\worker.log
 
 set "crucial_files=config.json NOTE.txt icon.ico"
 
-:: New customizable icon path (relative to script folder)
 set icon_file=%misc%\icon.ico
 
 set title=sortah compiler! @mmashez
@@ -95,7 +94,7 @@ echo compiling main app...
 g++ %arguments% %input% resource.o -o %full_output% > "%log%" 2>&1
 if errorlevel 1 (
     echo compilation failed! see %log% for details.
-    pause
+    call :done
     exit /b
 )
 echo compilation succeeded! >> "%log%"
@@ -104,7 +103,7 @@ echo compiling worker...
 g++ %worker_arguments% %worker_input% resource.o -o %output_folder%\%build%\%worker_exe% > "%worker_log%" 2>&1
 if errorlevel 1 (
     echo compilation of the worker failed! see %worker_log% for details.
-    pause
+    call :done
     exit /b
 )
 echo compilation succeeded! >> "%worker_log%"
@@ -115,10 +114,14 @@ echo copying misc files...
 xcopy /s /e /q "%misc%" "%output_folder%\%build%" > nul
 
 del resource.o >nul 2>&1
+del %output_folder%\%build%\*.log >nul 2>&1
 
 exit /b
 
 :done
+echo done
+echo.
 echo press any key to exit...
 pause > nul
+exit
 exit /b
