@@ -1,5 +1,5 @@
 .vscode/
-error.txt
 output/
-merge/
 *.log
+*.sortahtemp
+gui/

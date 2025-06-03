@@ -1,8 +1,10 @@
 {
-    "editsFolder": "C:\\Users\\Miles\\Documents\\Edits",
-    "videosFolder": "C:\\Users\\Miles\\Videos\\Obs",
+    "editsPath": "C:\\Users\\Miles\\Documents\\Edits",
+    "videosPath": "C:\\Users\\Miles\\Videos\\Obs",
     "softwarePath": "d:\\ae 2020\\Adobe\\Adobe After Effects 2020\\Support Files\\AfterFX.exe",
-    "startupScriptsPath": "D:\\ae 2020\\Adobe\\Adobe After Effects 2020\\Support Files\\Scripts\\Startup",
+    "ae_startupScriptsPath": "D:\\ae 2020\\Adobe\\Adobe After Effects 2020\\Support Files\\Scripts\\Startup",
     "audiosPath": "C:\\Users\\Miles\\Downloads",
-    "isAfterFX": true
+    "isAfterFX": true,
+    "worker-ver": "sortah-worker-1.0.0-dev",
+    "gui-ver": "sortah-gui-0.0.0-init"
 }
